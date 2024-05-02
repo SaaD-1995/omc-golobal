@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&family=Lato&family=Montserrat:wght@700&family=Open+Sans&family=Poppins:wght@500&display=swap"); */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.screenContainer {
+  @apply px-5 sm:px-6 md:px-10 lg:px-14 xl:px-40 2xl:px-96;
+  width: 100%;
+}
+
+.navContainer {
+  @apply px-5 sm:px-6 md:px-10  lg:px-14 xl:px-40 2xl:px-96;
+  width: 100%;
+  /* @apply py-3; */
+}
+/* body {
+  @apply bg-bgColor;
+} */
+
+.cardXs {
+  @apply p-2 sm:p-2.5 md:p-3 lg:p-4;
+}
+
+.cardSm {
+  @apply p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6;
+}
+
+.cardMd {
+  @apply p-3 sm:p-4 md:p-5 lg:p-7 xl:p-9;
+}
+
+.cardXl {
+  @apply p-3 sm:p-5 md:p-7 lg:p-10 xl:p-12;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hideScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+:root {
+  font-family: "Inter var", sans-serif;
+  --color-primary2: rgba(68, 106, 240, 1);
+  --color-primaryLight: #96adff;
+  --color-primaryLighter: #dfe6fe;
+  --color-primaryLight-2: #eff2fa;
+  --color-secondary: #3AAA35;
+  --color-secondary2: rgba(0, 0, 0, 1);
+  --color-tertiary: rgba(248, 94, 116, 0.2);
+  --color-tertiary2: rgb(248, 51, 80);
+  --color-tertiaryLight: #ffdfdd;
+
+  --color-darkOrange: rgba(255, 138, 0, 1);
+  --color-rubyRed: rgba(252, 44, 31, 1);
+  --color-aquramarine: rgba(90, 225, 195, 1);
+
+  --color-heading: rgba(16, 24, 40, 1);
+  --color-body: rgba(34, 40, 54, 1);
+  --color-subheading: rgba(170, 168, 178, 1);
+  --color-subheading-2: rgb(102, 112, 133);
+
+  --color-label: rgba(52, 64, 84, 1);
+
+  --color-lightGray: rgba(170, 168, 178, 0.314);
+  --color-lighterGray: #f9fafb;
+  --color-gray: rgba(153, 153, 153, 1);
+
+  --color-grayIcons: rgb(133, 139, 143);
+  --color-blackIcons: rgb(36, 35, 35);
+  --color-lightGrayIcons: rgb(242, 242, 242);
+
+  --color-bgBody: rgba(246, 248, 250, 255);
+  --color-bgCard: rgba(239, 241, 243, 255);
+
+  --color-white: rgb(255, 255, 255);
+  --color-black: rgb(0, 0, 0);
+  --color-transparent: rgba(0, 0, 0, 0);
+
+  --color-error: #eb5857;
+  --color-success: #00cc99;
+  --color-warning: #f2c94c;
+  --color-info: #177edc;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply  font-medium;
+  }
+
+  li,
+  p,
+  ol,
+  ul {
+    @apply font-[400]  leading-[1.8] sm:leading-[1.8] md:leading-[1.8] lg:leading-[1.8] xl:leading-[1.8];
+  }
+  hr {
+    @apply opacity-40 h-[1px] ;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+
+  .element::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  *:-webkit-scrollbar {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .submitting * {
+    @apply opacity-70 pointer-events-none;
+  }
+  .margin-t-main {
+    @apply mt-2 md:mt-4 lg:mt-6 xl:mt-8;
+  }
+
+  .margin-b-main {
+    @apply mb-6 sm:mb-10 md:mb-12 xl:mb-14;
+  }
+
+  .clamp {
+    --n-lines: 1;
+    margin: 0;
+    overflow: hidden;
+    line-height: 2.5;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--n-lines); /* number of lines to show */
+    line-clamp: var(--n-lines);
+  }
+  .clamp.tight {
+    line-height: 1.5;
+  }
+  .clamp.line-1 {
+    --n-lines: 1;
+  }
+  .clamp.line-2 {
+    --n-lines: 2;
+  }
+  .clamp.line-3 {
+    --n-lines: 3;
+  }
+  .clamp.line-4 {
+    --n-lines: 4;
+  }
+  /* text classes */
+  .text-display-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold capitalize;
+  }
+  .text-display-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold capitalize;
+  }
+  .text-display-3 {
+    @apply text-2xl md:text-3xl lg:text-5xl font-normal capitalize;
+  }
+  .text-display-4 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-normal capitalize;
+  }
+  .text-display-5 {
+    @apply text-xl md:text-2xl lg:text-3xl font-normal capitalize;
+  }
+  .text-display-6 {
+    @apply text-lg md:text-xl lg:text-2xl font-normal capitalize;
+  }
+  .text-heading-1 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  .text-heading-2 {
+    @apply text-lg md:text-2xl xl:text-3xl;
+  }
+  .text-heading-3 {
+    @apply text-lg md:text-xl;
+  }
+  .text-heading-4 {
+    @apply text-base md:text-lg;
+  }
+  .text-subheading-1 {
+    @apply mb-2 md:mb-3 xl:mb-4 text-sm md:text-base;
+  }
+  .text-subheading-2 {
+    @apply mb-1.5 md:mb-2 xl:mb-3 text-xs md:text-sm;
+  }
+  .text-body-1 {
+    @apply text-sm md:text-base;
+  }
+  .text-body-2 {
+    @apply text-xs md:text-sm;
+  }
+
+  /* containers for content width*/
+  .container {
+    @apply px-[5vw] sm:px-9 md:px-4 lg:px-8 xl:px-48;
+    max-width: 100vw;
+  }
+  .container-tight {
+    @apply px-[5vw] sm:px-9 md:px-16 lg:px-[17.5vw] xl:px-80;
+    max-width: 100vw;
+  }
+  .container-fluid {
+    @apply px-[3vw] sm:px-3 md:px-8 lg:px-14 xl:px-28;
+    max-width: 100vw;
+  }
+
+  /* padding box */
+  .padding-box-xs {
+    @apply p-2 sm:p-3;
+  }
+  .padding-box-y-xs {
+    @apply py-2 sm:py-3;
+  }
+  .padding-box-x-xs {
+    @apply px-2 sm:px-3;
+  }
+
+  .padding-box-sm {
+    @apply p-2 sm:p-4 md:p-5 lg:p-6;
+  }
+  .padding-box-x-sm {
+    @apply px-2 sm:px-4 md:px-5 lg:px-6;
+  }
+
+  .padding-box-y-sm {
+    @apply py-2 sm:py-4 md:py-5 lg:py-6;
+  }
+
+  .padding-box-md {
+    @apply p-4 sm:p-6 md:p-8 lg:p-10;
+  }
+
+  .padding-box-y-md {
+    @apply py-4 sm:py-6 md:py-8 lg:py-10;
+  }
+
+  .padding-box-x-md {
+    @apply px-4 sm:px-6 md:px-8 lg:px-10;
+  }
+
+  .padding-box-lg {
+    @apply p-5 sm:p-9 md:p-14 lg:p-16;
+  }
+
+  .padding-box-y-lg {
+    @apply py-5 sm:py-9 md:py-14 lg:py-16;
+  }
+
+  .padding-box-x-lg {
+    @apply px-5 sm:px-9 md:px-14 lg:px-16;
+  }
+
+  /* margin box */
+
+  .margin-box-xs {
+    @apply m-2 sm:m-3;
+  }
+  .margin-box-y-xs {
+    @apply my-2 sm:my-3;
+  }
+  .margin-box-x-xs {
+    @apply mx-2 sm:mx-3;
+  }
+
+  .margin-box-sm {
+    @apply m-2 sm:m-4 md:m-5 lg:m-6;
+  }
+
+  .margin-box-x-sm {
+    @apply mx-2 sm:mx-4 md:mx-5 lg:mx-5;
+  }
+
+  .margin-box-y-sm {
+    @apply my-2 sm:my-4 md:my-5 lg:my-5;
+  }
+
+  .margin-box-md {
+    @apply m-2 sm:m-6 md:m-8 lg:m-10;
+  }
+
+  .margin-box-x-md {
+    @apply mx-2 sm:mx-6 md:mx-8 lg:mx-10;
+  }
+
+  .margin-box-y-md {
+    @apply my-2 sm:my-6 md:my-8 lg:my-10;
+  }
+
+  .margin-box-lg {
+    @apply m-3 sm:m-9 md:m-14 lg:m-16;
+  }
+
+  .margin-box-y-lg {
+    @apply my-3 sm:my-9 md:my-14 lg:my-16;
+  }
+
+  .margin-box-x-lg {
+    @apply mx-3 sm:mx-9 md:mx-14 lg:mx-16;
+  }
+
+  /* gaps  for grid and flex*/
+  .gap-card {
+    @apply gap-3 sm:gap-5 lg:gap-8;
+  }
+  .gap-box-sm {
+    @apply gap-2 sm:gap-3 lg:gap-6;
+  }
+  .gap-box-x-sm {
+    @apply gap-x-2 sm:gap-x-3 lg:gap-x-6;
+  }
+  .gap-box-y-sm {
+    @apply gap-y-2 sm:gap-y-3 lg:gap-y-6;
+  }
+
+  .gap-box-md {
+    @apply gap-6 sm:gap-10 md:gap-12;
+  }
+  .gap-box-x-md {
+    @apply gap-x-6 sm:gap-x-10 md:gap-x-12;
+  }
+  .gap-box-y-md {
+    @apply gap-y-6 sm:gap-y-10 md:gap-y-12;
+  }
+
+  .gap-box-lg {
+    @apply gap-8 sm:gap-14 md:gap-16;
+  }
+  .gap-box-x-lg {
+    @apply gap-x-8 sm:gap-x-14 md:gap-x-16;
+  }
+  .gap-box-y-lg {
+    @apply gap-y-8 sm:gap-y-14 md:gap-y-16;
+  }
+
+  /* grid systems */
+  .grid-box-lg {
+    @apply grid grid-cols-1 md:grid-cols-2;
+  }
+  .grid-box-md {
+    @apply grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3;
+  }
+  .grid-box-sm {
+    @apply grid grid-cols-2 sm:grid-cols-4  md:grid-cols-6;
+  }
+
+  .modal-width-sm {
+    @apply w-full sm:w-2/3 md:w-2/4 lg:w-3/6 xl:w-[48%] lg:ml-64 xl:ml-52;
+    
+  }
+  .modal-width-md {
+    @apply w-full md:w-[60%];
+  }
+  .modal-width-lg {
+  }
+  .modal-width-xl {
+  }
+}

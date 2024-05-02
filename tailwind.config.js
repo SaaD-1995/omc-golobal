@@ -1,0 +1,90 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./storyblok/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
+    "./error.vue",
+    "components/**/*.{vue,js}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+      },
+      clipPath: {
+        polygon: 'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)',
+      },
+      colors: {
+        primary: "#234822",
+        primary2: "var(--color-primary2)",
+        secondaryColor: '#446af0',
+        secondary: "#3AAA35",
+        secondary2:  "var(--color-secondary2)",
+        tertiary: "#40A2E3",
+        primaryColor: "var(--color-primary)",
+        grayIcons: "var(--color-grayIcons)",
+        bgColor: "#FAF6F3",
+        black: 'var(--color-black)',
+        textGray1: "#454545",
+        textGray2: "#595959",
+        textGray3: "#656565",
+        textGray4: "#D7D6D6",
+        textGray5: '#748973',
+        textGray6: "#444C44",
+        borderColor: "#D9D9D9",
+        gradient:'gradient-to-r from-[#BDC200] via-[#95C11F] to-[#3AAA35]',
+        icon: "#8C8C8C",
+        text1: "#404040",
+        text2: "#262626",
+        text3: "#C6C6C6",
+        text4: "#CCCCCC",
+        text5: '#748973',
+        bgAbout: '#F9FDF7',
+        bgFleet: "#F8F8F8",
+        primaryColor2: "var(--color-primary2)",
+        primaryLight: "var(--color-primaryLight)",
+        primaryLighter: "var(--color-primaryLighter)",
+        primaryLight2: "var(--color-primaryLight-2)",
+        secondary: "var(--color-secondary)",
+        tertiary: "var(--color-tertiary)",
+        tertiary2: "var(--color-tertiary2)",
+        tertiaryLight: "var(--color-tertiaryLight)",
+
+        darkOrange: "var(--color-darkOrange)",
+        rubyRed: "var(--color-rubyRed)",
+        aquramarine: "var(--color-aquramarine)",
+
+        heading: "var(--color-heading)",
+        subheading: "var(--color-subheading)",
+        subheading2: "var(--color-subheading-2)",
+        body: "var(--color-body)",
+        label: "var(--color-label)",
+
+        lightGrayColor: "var(--color-lightGray)",
+        lightGray: "var(--color-lightGray)",
+        lighterGray: "var(--color-lighterGray)",
+        gray: "var(--color-gray)",
+
+        grayIcons: "var(--color-grayIcons)",
+        blackIcons: "var(--color-blackIcons)",
+        lightGrayIcons: "var(--color-lightGrayIcons)",
+
+        bgCard: "var(--color-bgCard)",
+        bgBody: "var(--color-bgBody)",
+
+        white: "var(--color-white)",
+        black: "var(--color-black)",
+        transparent: "var(--color-transparent)",
+
+        error: "var(--color-error)",
+        success: "var(--color-success)",
+        info: "var(--color-info)",
+        warning: "var(--color-warning)",
+    },
+  },
+  }
+}
